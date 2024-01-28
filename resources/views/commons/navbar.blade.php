@@ -6,6 +6,16 @@
         </div>
 
         <div class="flex-none">
+            
+            @if (Auth::check())
+                {{-- 商品掲載ページへのリンク --}}  
+            <div>
+                <a class="btn btn-primary" href="{{ route('products.create') }}">商品掲載</a>
+            </div>
+            @else
+                            
+            @endif
+            
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <ul tabindex="0" class="menu hidden lg:menu-horizontal">
